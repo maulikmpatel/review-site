@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>All Reviews List</title>
+</head>
+<body>
+	<h1>Reviews Header</h1>
+	<ul>
+		<li th:each="review : ${reviews}">
+			<a th:href="|@{/reviews/}${review.id}|">
+				 <span th:text="${review.title}+':'"></span>
+				 <span th:text="${review.catagory}"></span>
+		</a>
+		</li>
+	</ul>
+</body>
+</html>
