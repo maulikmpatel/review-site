@@ -48,6 +48,17 @@ public class ReviewSiteControllerTest {
 			.andExpect(model()
 			.attribute("reviews", reviewRepo.getReviews()));
 	}
+	@Test
+		public void geteviewShouldReturnReviewView() throws Exception {
+			mvc.perform(get("/reviews/42")).andExpect(view().name(is(equalTo("review"))));
+		}
+	@Test
+		public void getReviewShouldBeOk() throws Exception {
+			mvc.perform(get("/reviews/42")).andExpect(status().is2xxSuccessful());
+		}
+	@Test
+		public void getReviewShouldReturnOneReview() throws Exception {
+			mvc.perform(get("/reviews/2")).andExpect(model().attribute("review", is(reviewRepo.findById(2L))));
+		}
 	
-
 }

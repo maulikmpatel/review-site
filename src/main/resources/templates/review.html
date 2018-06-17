@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Review</title>
+	<title th:text="'Review of: ' + ${review.title}"></title>
 </head>
 <body>
-<h1> Review Header for specific reviews</h1>
+	<header>
+		<h1 th:text="${review.title}"></h1>
+		<h2 th:text="'Category: ' +${review.catagory} + ' reviews'"></h2>
+		
+	</header>
+
+	<img th:src="${review.imgUrl}" />
+    <p th:text="${review.content}"></p>
+<a th:href="@{/reviews}">Go back</a>
 </body>
 </html>
