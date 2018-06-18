@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>All Reviews List</title>
+<title>Food: a love affair with my belly</title>
 </head>
 <body>
-	<h1>Reviews Header</h1>
+	<h1>Review of the three greatest food groups ever.</h1>
 	<ul>
 		<li th:each="review : ${reviews}">
 			<a th:href="|@{/reviews/}${review.id}|">
 				 <span th:text="${review.title}+':'"></span>
 				 <span th:text="${review.catagory}"></span>
-		</a>
+			</a>
 		</li>
 	</ul>
 </body>
